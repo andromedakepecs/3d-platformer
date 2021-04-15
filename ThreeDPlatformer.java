@@ -6,6 +6,7 @@ import java.awt.image.BufferStrategy;
 /************************************************************
 3D Platformer
 Arrow keys to move, space to jump, mouse to change view
+TODO fov class??
 *************************************************************/
 
 public class ThreeDPlatformer 
@@ -13,15 +14,14 @@ extends JFrame
 implements KeyListener, ActionListener, MouseMotionListener
 {
 	// Window
-	public static final int WINDOW_WIDTH = 600;		
-	public static final int WINDOW_HEIGHT = 700;		
+	public static final int WINDOW_WIDTH = 2560;		
+	public static final int WINDOW_HEIGHT = 1600;		
 	public static final Color WINDOW_COLOR = Color.WHITE;
 	public static final int TITLE_BAR = 22;
+	public static final String TITLE = "3D PLATFORMER BY ANDROMEDA KEPECS";
 
 	// Time delay between image updates
 	private static final int DELAY_IN_MILLISEC = 20;
-
-	private static Player p;
 
 	// main method -- start up window
 	public static void main(String args[])
@@ -38,8 +38,9 @@ implements KeyListener, ActionListener, MouseMotionListener
 		// TODO
 
 		// Initialize window
+		setTitle(TITLE);
 		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-        setSize(MAX_WIDTH, MAX_HEIGHT);
+        setSize(WINDOW_WIDTH, WINDOW_HEIGHT);
         setVisible(true);
 
         createBufferStrategy(10);
